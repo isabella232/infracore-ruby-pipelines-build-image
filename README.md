@@ -1,0 +1,1 @@
+# infracore-ruby-pipelines-build-image

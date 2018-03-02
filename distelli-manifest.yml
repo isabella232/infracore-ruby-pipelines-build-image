@@ -1,0 +1,10 @@
+infracore/infracore-ruby-build-image:
+  Build:
+    ### Docker Build Commands ###
+    - docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" $DISTELLI_DOCKER_ENDPOINT
+    - docker build --quiet=false -t "$DISTELLI_DOCKER_REPO" $DISTELLI_DOCKER_PATH
+    - docker tag "$DISTELLI_DOCKER_REPO" "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
+    - docker tag "$DISTELLI_DOCKER_REPO" "$DISTELLI_DOCKER_REPO:latest"
+    - docker push "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
+    - docker push "$DISTELLI_DOCKER_REPO:latest"
+    ### End Docker Build Commands ###
