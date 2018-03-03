@@ -13,7 +13,7 @@ WORKDIR /home/distelli
 # Note. You don't need git or mercurial.
 RUN apt-get update -y \
   && apt-get dist-upgrade -y \
-  && apt-get install -y --no-install-recommends apt-transport-https build-essential ca-certificates checkinstall cmake curl dirmngr gnupg2 libssl-dev ruby-dev wget \
+  && apt-get install -y --no-install-recommends apt-transport-https build-essential ca-certificates checkinstall cmake curl dirmngr gnupg2 libssl-dev pkg-config ruby-dev wget \
   && apt-get install -y --no-install-recommends openssh-client openssh-server sudo \
   && apt-get clean autoclean \
   && apt-get autoremove -y \
